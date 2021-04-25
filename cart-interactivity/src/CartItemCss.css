@@ -1,0 +1,52 @@
+.productPrice div{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-image:url("https://toppng.com/uploads/preview/recycling-bin-vector-delete-icon-png-black-11563002079w1isxqyyiv.png");
+    background-size: cover;
+}
+.productColor{
+    display: flex;
+    align-items: center;
+}
+.productColor div{
+    width : 100px;
+    height : 20px;
+    margin-left: 25px;
+}
+.productImg img{
+    width: 250px;
+    height: 250px;
+
+}
+.productContent{
+    display: flex;
+    justify-content: space-between;
+}
+
+.productPrice{
+    padding-left: 20px;
+}
+.productPrice span{
+display: block;
+margin-top: 110px;
+color: #383B3E;
+font-size: 18px;
+font-weight: bold;
+}
+
+.productDescription h2{
+    color: #383B3E;
+    font-size: 20px;
+}
+.productDescription p{
+    color:#BFC0C1;
+    font-size: 18px;
+ 
+}
+.productDescription select{
+    background: none;
+    padding: 6px 10px;
+    border: 1px solid #BFC0C1;
+    outline: none;
+}

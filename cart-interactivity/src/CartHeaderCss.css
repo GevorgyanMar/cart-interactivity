@@ -1,0 +1,23 @@
+.CartHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.productContent{
+  padding: 15px 0;
+  border-bottom: 1px solid #BFC0C1;
+}
+.CartHeader h3 {
+text-transform: uppercase;
+color: #383B3E;
+font-size: 25px;
+}
+
+.CartHeader button{
+  font-size: 24px;
+  color: #BFC0C1;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+}

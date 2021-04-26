@@ -1,52 +1,92 @@
-.productPrice div{
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    background-image:url("https://toppng.com/uploads/preview/recycling-bin-vector-delete-icon-png-black-11563002079w1isxqyyiv.png");
-    background-size: cover;
-}
-.productColor{
-    display: flex;
-    align-items: center;
-}
-.productColor div{
-    width : 100px;
-    height : 20px;
-    margin-left: 25px;
-}
-.productImg img{
-    width: 250px;
-    height: 250px;
-
-}
-.productContent{
-    display: flex;
-    justify-content: space-between;
+.productPrice div {
+    width            : 60px;
+    height           : 85px;
+    cursor           : pointer;
+    background-image : url("https://media.istockphoto.com/photos/empty-waste-paper-bin-xxxl-picture-id182843384?k=6&m=182843384&s=612x612&w=0&h=zog4-UmB612s1h-0zRuaygT6Wd67bNhVM-exhmICM2s=");
+    background-size  : cover;
 }
 
-.productPrice{
-    padding-left: 20px;
-}
-.productPrice span{
-display: block;
-margin-top: 110px;
-color: #383B3E;
-font-size: 18px;
-font-weight: bold;
+.productColor {
+    display     : flex;
+    align-items : center;
 }
 
-.productDescription h2{
-    color: #383B3E;
-    font-size: 20px;
+.productColor div {
+    width       : 100px;
+    height      : 20px;
+    margin-left : 25px;
 }
-.productDescription p{
-    color:#BFC0C1;
-    font-size: 18px;
- 
+
+.productColor h4 {
+    color          : #383B3E;
+    font-size      : 18px;
+    text-transform : capitalize;
+    letter-spacing : 1px;
+    font-style     : italic;
 }
-.productDescription select{
-    background: none;
-    padding: 6px 10px;
-    border: 1px solid #BFC0C1;
-    outline: none;
+
+.productImg img {
+    width  : 210px;
+    height : 210px;
 }
+
+.productContent {
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+}
+
+.counter button {
+    width       : 40px;
+    cursor      : pointer;
+    font-weight : bold;
+    font-size   : 16px;
+    border      : 1px solid black;
+
+}
+
+.counter input {
+    width   : 80px;
+    height  : 19px;
+    margin  : 5px;
+    outline : none;
+    border  : 1px solid black;
+}
+
+.counter input::placeholder {
+    font-weight : bold;
+    font-size   : 15px;
+}
+
+.productPrice {
+    padding-left   : 20px;
+    display        : flex;
+    flex-direction : column;
+    align-items    : flex-end;
+}
+
+.productPrice span {
+    display        : block;
+    margin-top     : 50px;
+    color          : #383B3E;
+    font-size      : 16px;
+    font-weight    : bold;
+    text-transform : capitalize;
+    letter-spacing : 1px;
+    font-style     : italic;
+}
+
+.productDescription h2 {
+    color          : #383B3E;
+    font-size      : 20px;
+    text-transform : capitalize;
+    letter-spacing : 1px;
+    font-style     : italic;
+}
+
+.productDescription p {
+    color     : #BFC0C1;
+    font-size : 18px;
+
+}
+

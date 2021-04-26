@@ -1,17 +1,16 @@
 import React, {useState, useEffect} from "react";
 import CartItemList from "./CartItemList";
-import  "./CartCss.css"
+import "./CartCss.css"
 import CartHeader from './CartHeader';
 import CartFooter from './CartFooter';
 
+let subtotal=0;
+function Cart() {
 
- function Cart() {
     const [data, setData] = useState();
     const json = async () => {
-
         const dat = await fetch("DataProduct.json");
         const getJson = await dat.json()
-
         setData(getJson)
     }
 
@@ -20,43 +19,61 @@ import CartFooter from './CartFooter';
     }, [])
 
     return (
-        <div className="aa">
+        <div className="allProductInfo">
             <CartHeader/>
-            {data && <CartItemList data={data}
-             onDelete={
-                 (dataProduct)=>{
-                 setData(data.filter((t)=> t.id !== dataProduct.id ))
-                 } }
+            {data && <CartItemList data={data} id={data.id}
+                                   onDelete={
+                                       (dataProduct) => {
+                                           setData(data.filter((t) => t.id !== dataProduct.id))
+                                       }}
+                                   onButtonAdd={
+                                       (dataProduct) => {
+                                           setData(
+                                               data.map(x => {
+                                                   if (x.id === dataProduct.id) {
+                                                       ++x.quantity
+                                                   }
+                                                   return x;
+                                               })
+                                           )
+                                       }
+                                   }
+                                   onBtnMinClick={
+                                       (dataProduct) => {
+                                           setData(
+                                               data.map(x => {
+                                                   if (x.id === dataProduct.id) {
+                                                       --x.quantity;
+                                                   }
+                                                   return x;
+                                               })
 
-             onButtonAdd={
 
-                 (dataProduct)=>{
+                                       )
 
+                                       }
+                                   }
+                                   onChange = {
+                                       (dataProduct) => {
+                                           setData(
+                                               data.map(x => {
+                                                   if (x.id === dataProduct.id) {
+                                                       x.quantity=dataProduct.quantity;
+                                                   }
+                                                   return x;
+                                               })
+                                           )
 
-                     setData(()=>
-                     {
+                                       }
+                                   }
 
-                         console.log("10000")
-                         for(let i=0; i< data.length-1;i++)
-                           {
-                               console.log("10001")
-                         if(dataProduct.id===data[i].id)
-                         {
+            />}
 
-                             data[i].quantity = data[i].quantity++;
-                             console.log("----")
-                             console.log(data[i].quantity)
-                             console.log(data[i].id)
-                             console.log("----")
-                         }}
-                     })
-                 }
-             }
-            /> }
-            <CartFooter/>
+                {data && <CartFooter data={data}/>}
         </div>
     )
 }
+
 
 export default Cart;
 

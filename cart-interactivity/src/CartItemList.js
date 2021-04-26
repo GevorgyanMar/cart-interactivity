@@ -1,5 +1,3 @@
-
-import cartItemListCss from './CartItemListCss.css';
 import CartItem from './CartItem';
 
 
@@ -12,6 +10,8 @@ function CartItemList(props){
                 dataProduct={elem}
                 onDelete={props.onDelete}
                 onButtonAdd={props.onButtonAdd}
+                onBtnMinClick={props.onBtnMinClick}
+                onChange={props.onChange}
             />)}
         </>
     )

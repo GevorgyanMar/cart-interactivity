@@ -6,8 +6,12 @@
 
 }
 .footerTotal h3{ 
-  color: #383B3E;
-  font-size: 25px;
+    color: #383B3E;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-style: italic;
 }
 
 .footerTotal span{
@@ -27,5 +31,6 @@
     padding: 0 16px;
     width: 100%;
     cursor: pointer;
+    font-style: italic;
 
 }

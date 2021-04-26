@@ -11,13 +11,15 @@
 text-transform: uppercase;
 color: #383B3E;
 font-size: 25px;
+font-style: italic;
 }
 
 .CartHeader button{
-  font-size: 24px;
+  font-size: 34px;
   color: #BFC0C1;
   cursor: pointer;
   outline: none;
   border: none;
   background: transparent;
+  font-weight: bold;
 }

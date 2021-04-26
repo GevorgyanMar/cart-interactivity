@@ -1,50 +1,51 @@
 import './CartItemCss.css';
 
-function CartItem (props){
+function CartItem(props) {
 
-let price = props.dataProduct.price;
-price = price.substring(1,price.length);
-let quantity = props.dataProduct.quantity;
-let sumProduct =quantity*price;
+    let price = props.dataProduct.price;
+    price = price.substring(1, price.length);
+    let quantity = props.dataProduct.quantity;
+    let sumProduct =Math.round(quantity * price * 100) / 100;
     return (
         <div className="productContent">
             <div className="productImg">
-                <img  src = {props.dataProduct.image} />
+                <img src={props.dataProduct.image} />
             </div>
 
             <div className="productDescription">
                 <h2>{props.dataProduct.name}</h2>
                 <div className="productColor">
                     <h4>color</h4>
-                    <div style={{backgroundColor:props.dataProduct.color}}></div>
+                    <div style={{ backgroundColor: props.dataProduct.color }}></div>
                 </div>
-               <div className="counter">
-                   <button
+                <div className="counter">
+                    <button onClick={() => {props.onBtnMinClick(props.dataProduct)}}>-</button>
+                    <input id={props.dataProduct.id} type="number"
+                           placeholder={props.dataProduct.quantity}
+                           onChange={() => {
+                               let spanSubtotal = document.getElementById("idSpan"+props.dataProduct.id)
+                               console.log(props.dataProduct.quantity)
+                               spanSubtotal.innerText = sumProduct;
 
+                        let name = document.getElementById(props.dataProduct.id).value;
+                        props.dataProduct.quantity = name;
+                        props.onChange(props.dataProduct)
 
-                   >-</button>
-                   <input type="number"  onChange={(e)=>{
-                       sumProduct=e.target.value*price;
-                      let spanSubtotal = document.getElementById(props.dataProduct.id)
-                       spanSubtotal.innerText=sumProduct;
-                   }} name={props.dataProduct.id} placeholder={props.dataProduct.quantity} />
-                   <button onClick={()=>{
-                       props.onButtonAdd(props.dataProduct)
-                   }}>+</button>
-               </div>
+                    }} />
+                    <button onClick={() => {
+                        props.onButtonAdd(props.dataProduct)
+                    }}>+</button>
+                </div>
             </div>
             <div className="productPrice">
-                <div onClick={()=>{
+                <div onClick={() => {
                     props.onDelete(props.dataProduct)
                 }}> </div>
-                <span id={props.dataProduct.id}>{sumProduct}</span>
-                <span> Skzbnakan gin {props.dataProduct.price}</span>
+                <span id={"idSpan"+props.dataProduct.id}>{"$"+ sumProduct}</span>
+                <span>{props.dataProduct.price}</span>
             </div>
         </div>
     )
 }
-//
-// function handlePassButtonClick (aa) {
-// console.log(aa)
-// }
+
 export default CartItem;

@@ -22,6 +22,10 @@ function sumProducts(data){
         let quantity = data[i].quantity;
         subtotal += quantity * price;
     }
+    if(subtotal===0){
+      let title =  document.getElementById("cartHeaderTitle")
+        title.innerText = "The cart is empty";
+    }
     return subtotal;
 }
 export default CartFooter;

@@ -1,7 +1,9 @@
 import './CartItemCss.css';
 
 function CartItem(props) {
-
+   if (props.dataProduct.image===""){
+       props.dataProduct.image="https://kubalubra.is/wp-content/uploads/2017/11/default-thumbnail.jpg";
+   }
     let price = props.dataProduct.price;
     price = price.substring(1, price.length);
     let quantity = props.dataProduct.quantity;

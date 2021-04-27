@@ -4,9 +4,9 @@ import "./CartCss.css"
 import CartHeader from './CartHeader';
 import CartFooter from './CartFooter';
 
-let subtotal=0;
-function Cart() {
 
+// let subtotal=0;
+function Cart() {
     const [data, setData] = useState();
     const json = async () => {
         const dat = await fetch("DataProduct.json");
@@ -15,7 +15,9 @@ function Cart() {
     }
 
     useEffect(() => {
-        json();
+       setTimeout(()=>{
+                   json();
+        },2000)
     }, [])
 
     return (

@@ -1,13 +1,16 @@
-import './App.css';
+import  "./App.css"
 import Cart from './Cart';
+import "./loading.css"
 
 
 
 function App() {
   return (
     <div className="App">
-        <Cart/>
+        <Cart />
+        <div id="hidden" className="lds-hourglass"></div>
     </div>
+
   );
 }
 
